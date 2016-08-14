@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - bower --version
-  - npm install phantomjs-prebuilt
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower
+- bower --version
+- npm install phantomjs-prebuilt
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: ehtj0E7MqLduyE4665sUHV7UfsL76ADy6liBoxIDGp7r4rCSgA9zplAIwz53Xhzu5gWCuwDDr/W2T3kJPjD1eeUUY/eN1LX47PyLB+SRPScQPDte5DtJgVoQDdGcy8bcOm07xSUsMMXN2hTrJqOxX8UWOaB74rTHwP19Ow5jIfbrlK9SWcFHTW20p42hOLR7Xni9uAPHWNd0NShdqoRCHbuU5GjfaLgTl0SMquvXyol7c038tvHM17lOOej6XTCfiB0oERdbYz6f1BPOukeyW8jpE7PiMSzgZ6c/ATA/w0ermhjmbA8VOKHgPxCqwdi+5Nk7Ra7roH03iBtw5Lsi4ssA9a0r70M/KtD4RqlHDRtvOPlTzt6RBm9biWOpuar9bFvUXg1xFlJZskIrhMQtpLIf6lwfzpd1cC1MD/dCM+debmT4oZRVQ3b6TH/6HLUapUs94z7TxoaQqvHgsJBge43MXh1XSd+H8hyj1J+yCedETkX9pkn39fjvgaPgzTQzGCIxziW9lSawpM2kGalHkDsRpW5Ps4mQjXMF6ShZ0roNigWyNfBrnUEPETNS6F/ksOfrdXqSjBvpUuhmu73fj35N+1CEWQUyxT07vFNe35uxp0F9qbr+q4DjjyAYEnaKFn/LfJdQOWLtZtzFjfAj8hSkF86S/wJMoPuPGQSu/Is=
+  app: peaceful-wildwood-81785
+  on:
+    repo: Just1nT/peepchatui-
